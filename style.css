@@ -1,77 +1,186 @@
+/* =======================
+   Global Styles
+======================== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   color: #333;
-}
-
-header {
-  /* 1. Replaced blue background with a background image */
-  /* This linear-gradient creates the "slightly transparent" dark overlay */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop');
-  
-  /* 2. Made the image cover the whole header area */
-  background-size: cover;
-  background-position: center;
-  
-  /* 3. Increased padding to make the header taller, like a banner */
-  padding: 60px 20px;
-  
-  color: white;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
+  background-color: #f4f4f4; /* A very light grey background */
 }
 
 section {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
+  padding: 40px 60px; /* More padding */
+  background: #ffffff; /* White background for all content sections */
+  margin-bottom: 10px; /* Small space between sections */
 }
 
-#hero {
-  /* 4. Changed the background to a light green tint */
-  background: #f0f8f7;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-/* 5. Kept h1 (on the image) white, but changed h2/h3 to the new green */
-h1 {
-  color: white;
-}
-
-h2, h3 {
-  /* This is the dark green from the ALPFA logo palette */
-  color: #004a44;
-}
-
-/* 6. Made the email link the bright blue from the palette */
-#contact a {
-  color: #0b72ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#contact a:hover {
-  text-decoration: underline;
+h1, h2, h3, h4 {
+  font-weight: 600;
 }
 
 ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style-type: none; /* Removes default bullets */
+  padding-left: 0;
 }
 
+li {
+  margin-bottom: 8px;
+}
+
+/* =======================
+   Layout: Sidebar + Main
+======================== */
+
+/* --- The black sidebar on the left --- */
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  position: fixed; /* Stays in place when scrolling */
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full height of the viewport */
+  background: #1a1a1a; /* Dark black/grey */
+  color: white;
+  padding: 30px;
+  box-sizing: border-box; /* Includes padding in the width */
+}
+
+.sidebar h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+}
+
+.sidebar nav a {
+  color: #ccc; /* Light grey text */
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 10px 0;
+  transition: all 0.2s ease;
+}
+
+/* This is the pink/magenta highlight for the active link */
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  color: #d81b60; /* Magenta color */
+  font-weight: bold;
+}
+
+/* --- The main content area on the right --- */
+.main-content {
+  margin-left: 250px; /* MUST be the same as the sidebar width */
+  padding: 0;
+}
+
+/* =======================
+   Main Content Sections
+======================== */
+
+/* --- Hero Header with Image --- */
+.hero-header {
+  /* The semi-transparent overlay */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 60px;
+  color: white;
+}
+
+.hero-header h1 {
+  color: white;
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+/* --- Section Headings (Green & Magenta) --- */
+.heading-green {
+  color: #004a44; /* Dark ALPFA Green */
+  font-size: 1.8em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.heading-magenta {
+  color: #d81b60; /* ALPFA Magenta/Pink */
+  font-size: 1.8em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* --- Grid for "Diversity" Section --- */
+.grid-container-4col {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between columns */
+  margin-top: 20px;
+}
+
+.grid-item {
+  flex-basis: 23%; /* Divides space into 4 columns */
+}
+
+.placeholder-box {
+  background-color: #eee;
+  height: 150px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* --- Grid for "Efforts" Section --- */
+.grid-container-2col {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.grid-item-effort {
+    flex-basis: calc(50% - 20px); /* Two columns, accounting for gap */
+}
+.grid-item-effort img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.grid-item-effort .placeholder-box.large {
+    height: 300px;
+}
+.grid-item-effort h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin: 10px 0 5px 0;
+}
+
+
+/* --- "Take Action" Button --- */
+.cta-button {
+  display: inline-block;
+  background-color: #d81b60; /* Magenta */
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: #a01447; /* Darker magenta on hover */
+}
+
+/* --- Footer --- */
 footer {
   text-align: center;
-  padding: 15px;
-  background: #eee;
-  color: #555;
-  margin-top: 30px;
+  padding: 30px;
+  background: #333;
+  color: #aaa;
+  font-size: 0.9em;
 }
