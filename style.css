@@ -7,9 +7,18 @@ body {
 }
 
 header {
-  background: #0b72ff;
+  /* 1. Replaced blue background with a background image */
+  /* This linear-gradient creates the "slightly transparent" dark overlay */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop');
+  
+  /* 2. Made the image cover the whole header area */
+  background-size: cover;
+  background-position: center;
+  
+  /* 3. Increased padding to make the header taller, like a banner */
+  padding: 60px 20px;
+  
   color: white;
-  padding: 20px;
   text-align: center;
 }
 
@@ -27,13 +36,31 @@ section {
 }
 
 #hero {
-  background: #f0f6ff;
+  /* 4. Changed the background to a light green tint */
+  background: #f0f8f7;
   text-align: center;
   padding: 40px 20px;
 }
 
-h1, h2, h3 {
+/* 5. Kept h1 (on the image) white, but changed h2/h3 to the new green */
+h1 {
+  color: white;
+}
+
+h2, h3 {
+  /* This is the dark green from the ALPFA logo palette */
+  color: #004a44;
+}
+
+/* 6. Made the email link the bright blue from the palette */
+#contact a {
   color: #0b72ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
 }
 
 ul {
