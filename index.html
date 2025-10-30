@@ -3,52 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALPFA Lehman College</title>
+  <title>ALPFA Lehman</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
-  <header>
-    <h1>ALPFA Lehman</h1>
+  <div class="sidebar">
+    <h2>ALPFA Lehman</h2>
     <nav>
-      <a href="#about">About</a>
-      <a href="#events">Events</a>
-      <a href="#contact">Sponsor Us</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#history">History</a>
+      <a href="#team">Team</a>
+      <a href="#faq">FAQ</a>
     </nav>
-  </header>
+  </div>
 
-  <section id="hero">
-    <h2>Empowering the Next Generation of Latino Leaders</h2>
-    <p>ALPFA Lehman College helps students grow professionally through networking, leadership, and career opportunities.</p>
-  </section>
+  <div class="main-content">
 
-  <section id="about">
-    <h3>About Us</h3>
-    <p>Founded in 2019, ALPFA Lehman College is a student chapter of the Association of Latino Professionals For America (ALPFA).  
-        For over 5 years, we’ve connected students with career resources, professional mentors, and top companies.</p>
-  </section>
+    <header class="hero-header" id="home">
+      <h1>ALPFA Lehman | Partner with Future Latino Leaders</h1>
+      <p>A one-line description of the project</p>
+    </header>
 
-  <section id="events">
-    <h3>Upcoming Events</h3>
-    <ul>
-      <li><strong>ALPFA Leadership Summit</strong> – Spring 2026</li>
-      <li><strong>Networking Night</strong> – Fall 2025</li>
-      <li><strong>Career Readiness Workshop</strong> – Ongoing</li>
-    </ul>
-  </section>
+    <section id="history">
+      <h3 class="heading-green">Our Story, Mission, and Journey</h3>
+      <p><strong>Elevating Latino Professionals for America</strong></p>
+      <p><strong>Mission:</strong> The Association of Latino Professionals For America (ALPFA) at Lehman College is dedicated to empowering and developing Latino men and women as leaders in every sector of the global economy. We achieve this through professional development, mentorship, and extensive networking opportunities.</p>
+      <p><strong>Our Journey:</strong> Since our founding, ALPFA Lehman has been the premier student organization for driven, diverse talent on campus. We focus on closing the opportunity gap by hosting dozens of events annually—from resume workshops led by corporate recruiters to exclusive networking dinners and regional leadership summits. Your partnership directly fuels these career-defining opportunities.</p>
+      <p><strong>The Impact:</strong> We don’t just connect students to jobs; we cultivate leaders. We provide the essential professional skills and cultural foundation necessary for our members to excel immediately upon graduation and continue to advance throughout their careers.</p>
+    </section>
 
-  <section id="contact">
-    <h3>Partner With Us</h3>
-    <p>We’re looking for sponsors who share our mission of developing diverse leaders.</p>
-    <p><strong>Email us at:</strong> <a href="mailto:alpfa.lehman@gmail.com">alpfa.lehman@gmail.com</a></p>
-  </section>
+    <section id="team">
+      <h3 class="heading-green">Diversity of Future Talent: Our Majors</h3>
+      <p>ALPFA Lehman students represent a broad and ambitious academic base, ready to contribute diverse perspectives to your organization.</p>
+      
+      <div class="grid-container-4col">
+        <div class="grid-item">
+          <div class="placeholder-box"></div> <ul>
+            <li>Accounting</li>
+            <li>Finance</li>
+            <li>Business Administration</li>
+            <li>Economics</li>
+          </ul>
+        </div>
+        <div class="grid-item">
+          <div class="placeholder-box"></div> <ul>
+            <li>Computer Science</li>
+            <li>Information Systems</li>
+            <li>Data Analytics</li>
+          </ul>
+        </div>
+        <div class="grid-item">
+          <div class="placeholder-box"></div> <ul>
+            <li>Marketing</li>
+            <li>Management</li>
+            <li>Communications</li>
+          </ul>
+        </div>
+        <div class="grid-item">
+          <div class="placeholder-box"></div> <ul>
+            <li>Students from liberal arts and sciences pursuing business careers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>© <span id="year"></span> ALPFA Lehman College</p>
-  </footer>
+    <section id="efforts">
+        <h3 class="heading-green">Recent Achievements & Community Events</h3>
+        <p>A brief description of the project's mission</p>
+        
+        <div class="grid-container-2col">
+            <div class="grid-item-effort">
+                <img src="https://via.placeholder.com/400x300" alt="Placeholder image">
+                <h4>Effort 1</h4>
+                <p>A description of an effort and why it matters.</p>
+            </div>
+            <div class="grid-item-effort">
+                <img src="https://via.placeholder.com/400x300" alt="Placeholder image">
+                <h4>Effort 2</h4>
+                <p>A description of an effort and why it matters.</p>
+            </div>
+            <div class="grid-item-effort">
+                <div class="placeholder-box large"></div> <h4>Effort 3</h4>
+                <p>A description of an effort and why it matters.</p>
+            </div>
+            <div class="grid-item-effort">
+                <div class="placeholder-box large"></div> <h4>Effort 4</h4>
+                <p>A description of an effort and why it matters.</p>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+    <section id="faq">
+      <h3 class="heading-magenta">Partner With US</h3>
+      <p>Invest in the next generation of diverse talent at Lehman College.</p>
+      <ul>
+        <li><strong>Review Tiers Online:</strong> See our detailed partnership benefits and investment levels.</li>
+        <li><strong>Schedule a 15-Min Call:</strong> Connect with our team to customize your engagement strategy.</li>
+        <li><strong>Start Your Impact Today:</strong> Finalize your sponsorship and immediately begin recruiting our members.</li>
+      </ul>
+      <a href="#" class="cta-button">
+        Take action
+      </a>
+    </section>
+
+    <footer>
+      <span>[Email]</span> | <span>[Address]</span> | <span>[Phone number]</span>
+    </footer>
+
+  </div> </body>
 </html>
