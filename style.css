@@ -1,6 +1,3 @@
-/* =======================
-   Global Styles
-======================== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -40,17 +37,33 @@ li {
   top: 0;
   left: 0;
   height: 100vh; /* Full height of the viewport */
-  background: #1a1a1a; /* Dark black/grey */
-  color: white;
+  /* Applied the blue-to-green gradient */
+  background: linear-gradient(to bottom, #348AC7, #74D680); 
+  color: black; /* Changed default text color to black */
   padding: 30px;
   box-sizing: border-box; /* Includes padding in the width */
 }
 
-.sidebar h2 {
-  color: white;
-  text-align: center;
-  margin-bottom: 30px;
+/* --- Styles for the new logo in the sidebar --- */
+.sidebar-header {
+  display: flex;         /* Aligns items side-by-side */
+  align-items: center;     /* Vertically centers the logo and text */
+  justify-content: center; /* Horizontally centers them as a group */
+  margin-bottom: 30px;     /* Keeps the space below the title */
 }
+
+.sidebar-header img {
+  height: 2.5em; /* Increased logo height (from 1.5em to 2.5em) */
+  width: auto;   /* Maintains the correct shape */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+.sidebar-header h2 {
+  color: black; /* Changed text color to black */
+  margin: 0;
+  line-height: 1.1; /* Reduced line height */
+}
+
 
 .sidebar nav {
   display: flex;
@@ -58,17 +71,16 @@ li {
 }
 
 .sidebar nav a {
-  color: #ccc; /* Light grey text */
+  color: #333; /* Changed text color to a darker grey for better contrast */
   text-decoration: none;
   font-size: 1.1em;
   padding: 10px 0;
   transition: all 0.2s ease;
 }
 
-/* This is the pink/magenta highlight for the active link */
 .sidebar nav a.active,
 .sidebar nav a:hover {
-  color: #d81b60; /* Magenta color */
+  color: white; /* Changed active/hover color to white for contrast */
   font-weight: bold;
 }
 
@@ -84,31 +96,23 @@ li {
 
 /* --- Hero Header with Image --- */
 .hero-header {
-  /* The semi-transparent overlay */
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-              url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop');
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+              url('https://media.licdn.com/dms/image/v2/D4E22AQEW0H2jfzf61g/feedshare-shrink_800/B4EZk.QA_uGYAg-/0/1757686082768?e=2147483647&v=beta&t=ccrJRzoczgXt7PqgPM5L-ex2HT2UDTgRCag3kQl3mSA');
   background-size: cover;
-  background-position: center;
-  padding: 100px 60px;
-  color: white;
+  background-position: center 30%; /* Shifted image up */
+  padding: 120px 60px; /* Increased padding */
+  color: #333;
 }
 
 .hero-header h1 {
-  color: white;
+  color: #000; /* Changed heading color to black */
   font-size: 2.5em;
   margin-top: 0;
 }
 
-/* --- Section Headings (Green & Magenta) --- */
+/* --- Section Headings (Green) --- */
 .heading-green {
   color: #004a44; /* Dark ALPFA Green */
-  font-size: 1.8em;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
-}
-
-.heading-magenta {
-  color: #d81b60; /* ALPFA Magenta/Pink */
   font-size: 1.8em;
   border-bottom: 2px solid #eee;
   padding-bottom: 10px;
@@ -162,7 +166,7 @@ li {
 /* --- "Take Action" Button --- */
 .cta-button {
   display: inline-block;
-  background-color: #d81b60; /* Magenta */
+  background-color: #004a44; /* ALPFA Dark Green */
   color: white;
   padding: 12px 25px;
   text-decoration: none;
@@ -173,7 +177,7 @@ li {
 }
 
 .cta-button:hover {
-  background-color: #a01447; /* Darker magenta on hover */
+  background-color: #002c29; /* Darker green on hover */
 }
 
 /* --- Footer --- */
@@ -183,4 +187,61 @@ footer {
   background: #333;
   color: #aaa;
   font-size: 0.9em;
+}
+
+/* THIS IS THE NEW, CORRECTED RULE. 
+  It only targets images inside the 4-column grid.
+*/
+.grid-container-4col .grid-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+/* =======================
+   Responsive / Mobile Styles
+======================== */
+@media (max-width: 768px) {
+
+  /* --- Changes the sidebar from a side-bar to a top-bar --- */
+  .sidebar {
+    position: relative; /* No longer fixed to the side */
+    width: 100%;        /* Becomes full-width */
+    height: auto;       /* Height adjusts to content */
+    padding: 20px;
+  }
+
+  /* --- Aligns the top logo/title to the left on mobile --- */
+  .sidebar-header {
+    justify-content: flex-start;
+  }
+
+  /* --- This is the main fix! --- */
+  .main-content {
+    margin-left: 0; /* Removes the 250px left margin */
+  }
+
+  /* --- Reduces padding on small screens --- */
+  section {
+    padding: 30px 20px;
+  }
+  
+  .hero-header {
+    padding: 60px 20px; /* Reduces hero padding */
+  }
+
+  .hero-header h1 {
+    font-size: 2em; /* Makes the main title a bit smaller */
+  }
+
+  /* --- Stacks the 4-column grid vertically --- */
+  .grid-container-4col {
+    flex-direction: column; /* Stacks the columns */
+    gap: 30px; /* Adds space between the stacked items */
+  }
+  
+  /* --- Stacks the 2-column grid vertically --- */
+  .grid-item-effort {
+    flex-basis: 100%; /* Makes each item full-width */
+  }
 }
