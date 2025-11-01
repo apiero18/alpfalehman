@@ -97,7 +97,7 @@ li {
 /* --- Hero Header with Image --- */
 .hero-header {
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
-              url('https://media.licdn.com/dms/image/v2/D4E22AQEW0H2jfzf61g/feedshare-shrink_800/B4EZk.QA_uGYAg-/0/1757686082768?e=2147483647&v=beta&t=ccrJRzoczgXt7PqgPM5L-ex2HT2UDTgRCag3kQl3mSA');
+              url('hero-image.jpg');
   background-size: cover;
   background-position: center 30%; /* Shifted image up */
   padding: 120px 60px; /* Increased padding */
