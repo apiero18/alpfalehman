@@ -99,7 +99,7 @@ li {
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
               url('hero-image.jpg');
   background-size: cover;
-  background-position: center 25%; /* Shifted image up */
+  background-position: center 40%; /* Shifted image up */
   padding: 120px 60px; /* Increased padding */
   color: #333;
 }
