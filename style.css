@@ -100,7 +100,7 @@ li {
               url('hero-image.jpg');
   background-size: cover;
   background-position: center 40%; /* Shifted image up */
-  padding: 120px 60px; /* Increased padding */
+  padding: 180px 60px; /* Increased padding */
   color: #333;
 }
 
