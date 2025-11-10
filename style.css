@@ -201,7 +201,9 @@ footer {
   color: #aaa;
   font-size: 0.9em;
 }
-footer a {
+footer a,
+footer a:link,
+footer a:visited {
   color: #aaa; /* Makes the link the same color as the footer text */
   text-decoration: none; /* Removes the underline */
 }
