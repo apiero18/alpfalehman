@@ -272,3 +272,10 @@ footer {
     flex-basis: 100%; /* Makes each item full-width */
   }
 }
+/* --- Styles for the new Event images --- */
+/* This targets images ONLY in the SECOND 2-column grid */
+#efforts .grid-container-2col + .grid-container-2col .grid-item-effort img {
+  width: 100%;
+  height: 300px; /* Same height as the placeholder */
+  object-fit: cover; /* Crops the image to fit, not stretch */
+}
