@@ -201,7 +201,14 @@ footer {
   color: #aaa;
   font-size: 0.9em;
 }
+footer a {
+  color: #aaa; /* Makes the link the same color as the footer text */
+  text-decoration: none; /* Removes the underline */
+}
 
+footer a:hover {
+  text-decoration: underline; /* Adds the underline back on hover */
+}
 /* THIS IS THE NEW, CORRECTED RULE. 
   It only targets images inside the 4-column grid.
 */
