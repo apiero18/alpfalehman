@@ -234,10 +234,10 @@ footer a:hover {
   margin-bottom: 10px; /* Adds nice spacing between awards */
 }
 
-/* --- Styling for new Events subtitle --- */
+/* --- Styling for new Events subtitle (UPDATED COLOR) --- */
 .events-subtitle {
   font-size: 1.5em;
-  color: #333;
+  color: #004a44; /* CHANGED TO ALPFA GREEN */
   margin-top: 40px; /* Adds space above the subtitle */
   margin-bottom: 10px; /* Space below subtitle, before grid */
 }
@@ -311,4 +311,3 @@ footer a:hover {
     flex-basis: 100%; /* Makes each item full-width */
   }
 }
-
