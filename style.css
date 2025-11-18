@@ -30,59 +30,98 @@ li {
    Layout: Sidebar + Main
 ======================== */
 
-/* --- The black sidebar on the left --- */
+/* --- The Sidebar (Updated for better layout) --- */
 .sidebar {
-  width: 250px; /* Fixed width for the sidebar */
-  position: fixed; /* Stays in place when scrolling */
+  width: 250px;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100vh; /* Full height of the viewport */
-  /* Applied the blue-to-green gradient */
+  height: 100vh;
+  /* Blue-to-green gradient */
   background: linear-gradient(to bottom, #348AC7, #74D680); 
-  color: black; /* Changed default text color to black */
+  color: white; /* Changed text to WHITE for better contrast */
   padding: 30px;
-  box-sizing: border-box; /* Includes padding in the width */
+  box-sizing: border-box;
+  
+  /* Flexbox to push socials to bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
 }
 
-/* --- Styles for the new logo in the sidebar --- */
+/* --- Styles for the logo/title --- */
 .sidebar-header {
-  display: flex;         /* Aligns items side-by-side */
-  align-items: center;     /* Vertically centers the logo and text */
-  justify-content: center; /* Horizontally centers them as a group */
-  margin-bottom: 30px;     /* Keeps the space below the title */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligned left */
+  margin-bottom: 40px; /* More space below logo */
 }
 
 .sidebar-header img {
-  height: 3em;   /* Increased logo size */
-  width: auto;   /* Maintains the correct shape */
-  margin-right: 10px; /* Space between logo and text */
+  height: 3em;
+  width: auto;
+  margin-right: 15px;
+  background: white; /* Adds a small white box behind logo if transparent */
+  padding: 2px;
+  border-radius: 4px;
 }
 
 .sidebar-header h2 {
-  color: black; /* Changed text color to black */
+  color: white; /* White text */
   margin: 0;
-  line-height: 1.1; /* Reduced line height */
+  line-height: 1.1;
+  font-size: 1.4em;
 }
 
-
+/* --- Navigation Links (Updated) --- */
 .sidebar nav {
   display: flex;
-  flex-direction: column; /* Stack links vertically */
+  flex-direction: column;
 }
 
 .sidebar nav a {
-  color: #333; /* Changed text color to a darker grey for better contrast */
+  color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
   text-decoration: none;
-  font-size: 1.1em;
-  padding: 10px 0;
-  transition: all 0.2s ease;
+  font-size: 1.2em; /* Larger text */
+  padding: 12px 15px; /* More clicking area */
+  margin-bottom: 5px;
+  border-radius: 8px; /* Rounded corners */
+  transition: all 0.3s ease;
 }
 
-.sidebar nav a.active,
-.sidebar nav a:hover {
-  color: white; /* Changed active/hover color to white for contrast */
-  font-weight: bold;
+.sidebar nav a i {
+  width: 25px; /* Ensures icons align nicely */
+  text-align: center;
+  margin-right: 10px;
 }
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: rgba(255, 255, 255, 0.2); /* White highlight on hover */
+  color: white;
+  font-weight: bold;
+  transform: translateX(5px); /* Small movement effect */
+}
+
+/* --- Sidebar Socials (New Bottom Section) --- */
+.sidebar-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3); /* Thin divider line */
+}
+
+.sidebar-socials a {
+  color: white;
+  font-size: 1.5em;
+  transition: transform 0.2s;
+}
+
+.sidebar-socials a:hover {
+  transform: scale(1.2); /* Grows slightly on hover */
+}
+
 
 /* --- The main content area on the right --- */
 .main-content {
@@ -288,11 +327,19 @@ footer a:hover {
     width: 100%;        /* Becomes full-width */
     height: auto;       /* Height adjusts to content */
     padding: 20px;
+    /* On mobile, we stack items but keep background */
+    flex-direction: column; 
+  }
+
+  /* Hide sidebar socials on mobile header to save space (since they are in footer) */
+  .sidebar-socials {
+    display: none;
   }
 
   /* --- Aligns the top logo/title to the left on mobile --- */
   .sidebar-header {
     justify-content: flex-start;
+    margin-bottom: 20px;
   }
 
   /* --- This is the main fix! --- */
