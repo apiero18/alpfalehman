@@ -202,16 +202,35 @@ footer {
   font-size: 0.9em;
 }
 
+/* Use Flexbox to align footer items in one line */
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 15px; /* Space between items */
+}
+
+/* Specific styling for footer links to override default blue */
 footer a,
 footer a:link,
 footer a:visited {
-  color: #aaa; /* Makes the link the same color as the footer text */
-  text-decoration: none; /* Removes the underline */
+  color: #aaa; /* Matches footer text color */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
 }
 
 footer a:hover {
-  text-decoration: underline; /* Adds the underline back on hover */
+  text-decoration: underline;
+  color: #fff; /* Highlight on hover */
 }
+
+.separator {
+  color: #555; /* Slightly darker for the pipes | */
+}
+
 
 /* THIS IS THE NEW, CORRECTED RULE. 
   It only targets images inside the 4-column grid.
